@@ -50,7 +50,7 @@ describe('Cypress application', () => {
     cy.window().then((win) => {
       cy.stub(win, 'prompt').as('promptStub').returns('This is prompt message');
     });
-    cy.get('#promtButton').click();
+    cy.get('#promptButton').click();
 
     cy.get('@promptStub')
       .should('have.been.calledOnceWith', 'Please enter your name');
